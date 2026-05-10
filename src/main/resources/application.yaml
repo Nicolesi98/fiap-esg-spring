@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: fiap-esg-spring
+  datasource:
+    url: jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
+    username: RM565891
+    password: "150998"
+    driver-class-name: oracle.jdbc.OracleDriver
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+    locations: classpath:db/migration
+    user: RM565891
+    password: "150998"
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  security:
+    username: ${APP_SECURITY_USERNAME:admin}
+    password: ${APP_SECURITY_PASSWORD:admin123}
