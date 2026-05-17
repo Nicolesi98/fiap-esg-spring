@@ -18,7 +18,7 @@ public class ConsumoEnergiaService {
         if (equipamentoId == null) {
             return repository.findAll();
         }
-        equipamentoService.buscarPorId(equipamentoId);
+        equipamentoService.verificaEquipamento(equipamentoId);
         return repository.findByEquipamentoId(equipamentoId);
     }
 
@@ -28,7 +28,6 @@ public class ConsumoEnergiaService {
     }
 
     public ConsumoEnergia criar(ConsumoEnergia consumo) {
-        consumo.setId(null);
         consumo.setEquipamento(equipamentoService.buscarPorId(consumo.getEquipamento().getId()));
         return repository.save(consumo);
     }

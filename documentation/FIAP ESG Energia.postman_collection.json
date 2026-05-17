@@ -1,82 +1,12 @@
 {
   "info": {
-    "_postman_id": "4a7ab1e1-8b2c-4a2c-b4ad-fiap-esg-energia",
+    "_postman_id": "b71282d5-9a1a-4e0a-bc3b-5e0704baaeec",
     "name": "FIAP ESG Energia",
     "description": "Collection para testar o microservico ESG de consumo de energia. Configure baseUrl se a aplicacao estiver em outra porta. As operacoes GET sao publicas; POST, PUT e DELETE usam Basic Auth.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2887719"
   },
-  "auth": {
-    "type": "basic",
-    "basic": [
-      {
-        "key": "username",
-        "value": "{{username}}",
-        "type": "string"
-      },
-      {
-        "key": "password",
-        "value": "{{password}}",
-        "type": "string"
-      }
-    ]
-  },
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:8080"
-    },
-    {
-      "key": "username",
-      "value": "admin"
-    },
-    {
-      "key": "password",
-      "value": "admin123"
-    },
-    {
-      "key": "empresaId",
-      "value": "1"
-    },
-    {
-      "key": "equipamentoId",
-      "value": "1"
-    },
-    {
-      "key": "consumoId",
-      "value": "1"
-    },
-    {
-      "key": "alertaId",
-      "value": "1"
-    }
-  ],
   "item": [
-    {
-      "name": "Health",
-      "item": [
-        {
-          "name": "GET Actuator Health",
-          "request": {
-            "auth": {
-              "type": "noauth"
-            },
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/actuator/health",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "actuator",
-                "health"
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
-    },
     {
       "name": "Empresas",
       "item": [
@@ -174,13 +104,13 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/empresas/{{empresaId}}",
+              "raw": "{{baseUrl}}/empresas/4",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "empresas",
-                "{{empresaId}}"
+                "4"
               ]
             }
           },
@@ -194,9 +124,6 @@
         {
           "name": "GET Listar equipamentos",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -214,9 +141,6 @@
         {
           "name": "GET Listar por empresa",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -240,9 +164,6 @@
         {
           "name": "GET Buscar equipamento por id",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -317,13 +238,13 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/equipamentos/{{equipamentoId}}",
+              "raw": "{{baseUrl}}/equipamentos/3",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "equipamentos",
-                "{{equipamentoId}}"
+                "3"
               ]
             }
           },
@@ -337,9 +258,6 @@
         {
           "name": "GET Listar consumos",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -357,9 +275,6 @@
         {
           "name": "GET Listar por equipamento",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -383,9 +298,6 @@
         {
           "name": "GET Buscar consumo por id",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -461,13 +373,13 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/consumos-energia/{{consumoId}}",
+              "raw": "{{baseUrl}}/consumos-energia/3",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "consumos-energia",
-                "{{consumoId}}"
+                "3"
               ]
             }
           },
@@ -481,9 +393,6 @@
         {
           "name": "GET Listar alertas",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -501,9 +410,6 @@
         {
           "name": "GET Listar por equipamento",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -527,9 +433,6 @@
         {
           "name": "GET Listar por status",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -553,9 +456,6 @@
         {
           "name": "GET Buscar alerta por id",
           "request": {
-            "auth": {
-              "type": "noauth"
-            },
             "method": "GET",
             "header": [],
             "url": {
@@ -630,19 +530,64 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/alertas/{{alertaId}}",
+              "raw": "{{baseUrl}}/alertas/2",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "alertas",
-                "{{alertaId}}"
+                "2"
               ]
             }
           },
           "response": []
         }
       ]
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{username}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{password}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "username",
+      "value": "admin"
+    },
+    {
+      "key": "password",
+      "value": "admin123"
+    },
+    {
+      "key": "empresaId",
+      "value": "1"
+    },
+    {
+      "key": "equipamentoId",
+      "value": "1"
+    },
+    {
+      "key": "consumoId",
+      "value": "1"
+    },
+    {
+      "key": "alertaId",
+      "value": "1"
     }
   ]
 }

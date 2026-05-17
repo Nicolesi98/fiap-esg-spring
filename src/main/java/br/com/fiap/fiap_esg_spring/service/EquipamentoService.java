@@ -18,7 +18,7 @@ public class EquipamentoService {
         if (empresaId == null) {
             return repository.findAll();
         }
-        empresaService.buscarPorId(empresaId);
+        empresaService.verificaEmpresa(empresaId);
         return repository.findByEmpresaId(empresaId);
     }
 
@@ -27,8 +27,13 @@ public class EquipamentoService {
                 .orElseThrow(() -> new ResourceNotFoundException("Equipamento nao encontrado: " + id));
     }
 
+    protected void verificaEquipamento(Long id){
+        if(!repository.existsById(id)){
+            throw new ResourceNotFoundException("Equipamento nao encontrado: " + id);
+        }
+    }
+
     public Equipamento criar(Equipamento equipamento) {
-        equipamento.setId(null);
         equipamento.setEmpresa(empresaService.buscarPorId(equipamento.getEmpresa().getId()));
         return repository.save(equipamento);
     }

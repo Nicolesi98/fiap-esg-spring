@@ -22,8 +22,13 @@ public class EmpresaService {
                 .orElseThrow(() -> new ResourceNotFoundException("Empresa nao encontrada: " + id));
     }
 
+    protected void verificaEmpresa(Long id){
+        if(!repository.existsById(id)){
+            throw new ResourceNotFoundException("Empresa nao encontrada: " + id);
+        }
+    }
+
     public Empresa criar(Empresa empresa) {
-        empresa.setId(null);
         return repository.save(empresa);
     }
 

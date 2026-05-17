@@ -17,7 +17,7 @@ public class AlertaService {
 
     public List<Alerta> listar(Long equipamentoId, AlertaStatus status) {
         if (equipamentoId != null) {
-            equipamentoService.buscarPorId(equipamentoId);
+            equipamentoService.verificaEquipamento(equipamentoId);
             return repository.findByEquipamentoId(equipamentoId);
         }
         if (status != null) {
@@ -32,7 +32,6 @@ public class AlertaService {
     }
 
     public Alerta criar(Alerta alerta) {
-        alerta.setId(null);
         alerta.setEquipamento(equipamentoService.buscarPorId(alerta.getEquipamento().getId()));
         return repository.save(alerta);
     }
